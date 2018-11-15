@@ -35,7 +35,8 @@
 						<label for="eventName">Name</label>
 						<input type="text" id="eventName" name="eventName" value='${event.name}'>
 						<label for="eventDate">Date</label>
-						<input type="date" id="eventDate" name="eventDate" value='${event.eventDate}'>
+						<input type="date" id="eventDate" name="eventDate" value='${fmteventDate}'>
+						<!-- <input type="date" id="eventDate" name="eventDate" value='2018-12-01'> -->
 						<label for="eventLocation">Location</label>
 						<input type="text" id="eventLocation" name="eventLocation" value='${event.location}'>
 						<select name="eventState" value="${event.state}">

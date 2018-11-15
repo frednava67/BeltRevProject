@@ -30,7 +30,7 @@ public class Event {
     private Long id; 
     @Size(min = 1, max = 255)
     private String name;
-    @DateTimeFormat(pattern="MM/dd/yyyy")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date eventDate;
     @Size(min = 1, max = 255)
     private String location;

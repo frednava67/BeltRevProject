@@ -26,9 +26,17 @@
 </head>
 
 <body>
-    <h1>Welcome, ${user.first_name}</h1>
-    <p><a class="btn btn-link float-right" href="/logout">Logout</a></p>
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-1 col-lg-1 col-med-1"></div>
+            <div class="col-xl-9 col-lg-9 col-med-9">
+                <h1>Welcome, ${user.first_name}</h1>
+            </div>
+            <div class="col-xl-1 col-lg-1 col-med-1">
+                <a class="btn btn-link float-right" href="/logout">Logout</a>
+            </div>
+        </div>
+        <br>
         <div class="row">
             <div class="col-xl-1 col-lg-1 col-med-1"></div>
             <div class="col-xl-9 col-lg-9 col-med-9">
@@ -54,10 +62,24 @@
                                 <td>${event.location}</td>
                                 <td>${event.host.first_name}</td>
                                 <td>
-                                	<c:if test="${!event.users.contains(user)}">
-	                                	<a href="/events/${event.id}/join/${user.id}">Join</a>
-    								</c:if>
-                                	<c:if test="${event.users.contains(user)}">Joining</c:if>
+                                    <c:choose>
+                                        <c:when test="${user != event.getHost()}">
+                                            <c:if test="${!event.users.contains(user)}">
+                                                <a href="/events/${event.id}/join/${user.id}">Join</a>
+                                            </c:if>
+                                            <c:if test="${event.users.contains(user)}">
+                                                Joining | <a href="/events/${event.id}/unjoin/${user.id}">Cancel</a>
+                                            </c:if>
+                                        </c:when>
+                                        <c:when test="${user == event.getHost()}">
+                                            <c:if test="${!event.users.contains(user)}">
+                                                <a href="/events/${event.id}/edit">Edit</a>
+                                            </c:if>
+                                            <c:if test="${event.users.contains(user)}">
+                                                Joining | <a href="/events/${event.id}/delete">Delete</a>
+                                            </c:if>
+                                        </c:when>
+                                    </c:choose>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -66,11 +88,11 @@
             </div>
         </div>
         <div class="row">
-                <div class="col-xl-1 col-lg-1 col-med-1"></div>
-                <div class="col-xl-9 col-lg-9 col-med-9">
-                    <p>Here are some of the events in other states:</p>
-                </div>
+            <div class="col-xl-1 col-lg-1 col-med-1"></div>
+            <div class="col-xl-9 col-lg-9 col-med-9">
+                <p>Here are some of the events in other states:</p>
             </div>
+        </div>
         <div class="row">
             <div class="col-xl-1 col-lg-1 col-med-1"></div>
             <div class="col-xl-9 col-lg-9 col-med-9">
@@ -85,15 +107,26 @@
                     <tbody>
                         <c:forEach items="${outOfStateEvents}" var="event">
                             <tr>
-                                 <td><a href='/events/${event.id}'>${event.name}</a></td>
+                                <td><a href='/events/${event.id}'>${event.name}</a></td>
                                 <td>${event.eventDate}</td>
                                 <td>${event.location}</td>
                                 <td>${event.host.first_name}</td>
                                 <td>
-                                	<c:if test="${!event.users.contains(user)}">
-	                                	<a href="/events/${event.id}/join/${user.id}">Join</a>
-    								</c:if>
-                                	<c:if test="${event.users.contains(user)}">Joining</c:if>
+                                    <c:choose>
+                                        <c:when test="${user != event.getHost()}">
+                                            <c:if test="${!event.users.contains(user)}">
+                                                <a href="/events/${event.id}/join/${user.id}">Join</a>
+                                            </c:if>
+                                            <c:if test="${event.users.contains(user)}">
+                                                Joining | <a href="/events/${event.id}/unjoin/${user.id}">Cancel</a>
+                                            </c:if>
+                                        </c:when>
+                                        <c:when test="${user == event.getHost()}">
+                                            <c:if test="${!event.users.contains(user)}">
+                                                <a href="/events/${event.id}/edit">Edit</a> | <a href="/events/${event.id}/delete">Delete</a>
+                                            </c:if>
+                                        </c:when>
+                                    </c:choose>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -107,11 +140,11 @@
         <br>
         <br>
         <div class="row">
-                <div class="col-xl-1 col-lg-1 col-med-1"></div>
-                <div class="col-xl-9 col-lg-9 col-med-9">
-                    <h3>Create an Event</h3>
-                </div>
+            <div class="col-xl-1 col-lg-1 col-med-1"></div>
+            <div class="col-xl-9 col-lg-9 col-med-9">
+                <h3>Create an Event</h3>
             </div>
+        </div>
         <div class="row">
             <div class="col-xl-1 col-lg-1 col-med-1"></div>
             <div class="col-xl-9 col-lg-9 col-med-9">
@@ -192,4 +225,5 @@
         </div>
     </div>
 </body>
+
 </html>

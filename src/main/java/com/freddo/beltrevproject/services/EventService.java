@@ -42,10 +42,17 @@ public class EventService {
 	    return eventRepo.save(event); 
 	} 
 
-	// udpates an event 
+	// updates an event 
 	public Event updateEvent(Event event) { 
 	    return eventRepo.save(event); 
 	} 	
+	
+	//cancels an event
+	
+	public void deleteEvent(Event event) {
+		eventRepo.delete(event);
+		return;
+	}
 	
 	// retrieves a event 
 	public Event findEvent(Long id) { 
