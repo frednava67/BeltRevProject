@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -31,6 +32,7 @@ public class Event {
     @Size(min = 1, max = 255)
     private String name;
     @DateTimeFormat(pattern="yyyy-MM-dd")
+    @NotNull
     private Date eventDate;
     @Size(min = 1, max = 255)
     private String location;

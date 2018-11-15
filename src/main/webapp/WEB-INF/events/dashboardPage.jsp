@@ -73,10 +73,7 @@
                                         </c:when>
                                         <c:when test="${user == event.getHost()}">
                                             <c:if test="${!event.users.contains(user)}">
-                                                <a href="/events/${event.id}/edit">Edit</a>
-                                            </c:if>
-                                            <c:if test="${event.users.contains(user)}">
-                                                Joining | <a href="/events/${event.id}/delete">Delete</a>
+                                                <a href="/events/${event.id}/edit">Edit</a> | <a href="/events/${event.id}/delete">Delete</a>
                                             </c:if>
                                         </c:when>
                                     </c:choose>

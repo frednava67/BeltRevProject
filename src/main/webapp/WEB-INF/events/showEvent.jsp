@@ -27,11 +27,16 @@
 
 <body>
     <div class="container-fluid">
-
         <div class="row">
-        	<div class="col-xl-1 col-lg-1 col-med-1"></div>
-		    <h1>${event.name}</h1>
-		</div>
+            <div class="col-xl-1 col-lg-1 col-med-1"></div>
+            <div class="col-xl-9 col-lg-9 col-med-9">
+                <h1>${event.name}</h1>
+            </div>
+            <div class="col-xl-1 col-lg-1 col-med-1">
+                <a class="btn btn-link float-right" href="/events">Home</a>
+            </div>
+        </div>
+        <br>
         <div class="row">		
         	<div class="col-xl-1 col-lg-1 col-med-1"></div>
             <div class="col-xl-4 col-lg-4 col-med-4">

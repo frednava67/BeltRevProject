@@ -59,8 +59,8 @@ public class EventController {
 	
 	 @RequestMapping(value="/events/process", method=RequestMethod.POST)
 	 public String processEvent(@RequestParam("hostid") Long hostid, @Valid @ModelAttribute("event") Event event, BindingResult result, Model model, HttpSession session) {
-		 System.out.println("===============================================processEvent()");
-		 //eventDateValidator.validate(event, result);
+		System.out.println("===============================================processEvent()");
+		eventDateValidator.validate(event, result);
 		if(result.hasErrors()) {
 			Long loggedInUserId = (Long) session.getAttribute("userid");
 	        User loggedInUser = userService.findUserById(loggedInUserId);

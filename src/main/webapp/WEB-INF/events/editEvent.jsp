@@ -40,57 +40,57 @@
 						<label for="eventLocation">Location</label>
 						<input type="text" id="eventLocation" name="eventLocation" value='${event.location}'>
 						<select name="eventState" value="${event.state}">
-							<option value="AL">AL</option>
-							<option value="AK">AK</option>
-							<option value="AZ">AZ</option>
-							<option value="AR">AR</option>
-							<option value="CA">CA</option>
-							<option value="CO">CO</option>
-							<option value="CT">CT</option>
-							<option value="DE">DE</option>
-							<option value="DC">DC</option>
-							<option value="FL">FL</option>
-							<option value="GA">GA</option>
-							<option value="HI">HI</option>
-							<option value="ID">ID</option>
-							<option value="IL">IL</option>
-							<option value="IN">IN</option>
-							<option value="IA">IA</option>
-							<option value="KS">KS</option>
-							<option value="KY">KY</option>
-							<option value="LA">LA</option>
-							<option value="ME">ME</option>
-							<option value="MD">MD</option>
-							<option value="MA">MA</option>
-							<option value="MI">MI</option>
-							<option value="MN">MN</option>
-							<option value="MS">MS</option>
-							<option value="MO">MO</option>
-							<option value="MT">MT</option>
-							<option value="NE">NE</option>
-							<option value="NV">NV</option>
-							<option value="NH">NH</option>
-							<option value="NJ">NJ</option>
-							<option value="NM">NM</option>
-							<option value="NY">NY</option>
-							<option value="NC">NC</option>
-							<option value="ND">ND</option>
-							<option value="OH">OH</option>
-							<option value="OK">OK</option>
-							<option value="OR">OR</option>
-							<option value="PA">PA</option>
-							<option value="RI">RI</option>
-							<option value="SC">SC</option>
-							<option value="SD">SD</option>
-							<option value="TN">TN</option>
-							<option value="TX">TX</option>
-							<option value="UT">UT</option>
-							<option value="VT">VT</option>
-							<option value="VA">VA</option>
-							<option value="WA">WA</option>
-							<option value="WV">WV</option>
-							<option value="WI">WI</option>
-							<option value="WY">WY</option>
+							<option value="AL"<c:if test="${event.state == 'AL'}"><c:out value=" selected"/></c:if>>AL<c:if test="${event.state == 'AL'}"><c:out value=" selected"/></c:if>>AL</option>
+							<option value="AK"<c:if test="${event.state == 'AK'}"><c:out value=" selected"/></c:if>>AK</option>
+							<option value="AZ"<c:if test="${event.state == 'AZ'}"><c:out value=" selected"/></c:if>>AZ</option>
+							<option value="AR"<c:if test="${event.state == 'AR'}"><c:out value=" selected"/></c:if>>AR</option>
+							<option value="CA"<c:if test="${event.state == 'CA'}"><c:out value=" selected"/></c:if>>CA</option>
+							<option value="CO"<c:if test="${event.state == 'CO'}"><c:out value=" selected"/></c:if>>CO</option>
+							<option value="CT"<c:if test="${event.state == 'CT'}"><c:out value=" selected"/></c:if>>CT</option>
+							<option value="DE"<c:if test="${event.state == 'DE'}"><c:out value=" selected"/></c:if>>DE</option>
+							<option value="DC"<c:if test="${event.state == 'DC'}"><c:out value=" selected"/></c:if>>DC</option>
+							<option value="FL"<c:if test="${event.state == 'FL'}"><c:out value=" selected"/></c:if>>FL</option>
+							<option value="GA"<c:if test="${event.state == 'GA'}"><c:out value=" selected"/></c:if>>GA</option>
+							<option value="HI"<c:if test="${event.state == 'HI'}"><c:out value=" selected"/></c:if>>HI</option>
+							<option value="ID"<c:if test="${event.state == 'ID'}"><c:out value=" selected"/></c:if>>ID</option>
+							<option value="IL"<c:if test="${event.state == 'IL'}"><c:out value=" selected"/></c:if>>IL</option>
+							<option value="IN"<c:if test="${event.state == 'IN'}"><c:out value=" selected"/></c:if>>IN</option>
+							<option value="IA"<c:if test="${event.state == 'IA'}"><c:out value=" selected"/></c:if>>IA</option>
+							<option value="KS"<c:if test="${event.state == 'KS'}"><c:out value=" selected"/></c:if>>KS</option>
+							<option value="KY"<c:if test="${event.state == 'KY'}"><c:out value=" selected"/></c:if>>KY</option>
+							<option value="LA"<c:if test="${event.state == 'LA'}"><c:out value=" selected"/></c:if>>LA</option>
+							<option value="ME"<c:if test="${event.state == 'ME'}"><c:out value=" selected"/></c:if>>ME</option>
+							<option value="MD"<c:if test="${event.state == 'MD'}"><c:out value=" selected"/></c:if>>MD</option>
+							<option value="MA"<c:if test="${event.state == 'MA'}"><c:out value=" selected"/></c:if>>MA</option>
+							<option value="MI"<c:if test="${event.state == 'MI'}"><c:out value=" selected"/></c:if>>MI</option>
+							<option value="MN"<c:if test="${event.state == 'MN'}"><c:out value=" selected"/></c:if>>MN</option>
+							<option value="MS"<c:if test="${event.state == 'MS'}"><c:out value=" selected"/></c:if>>MS</option>
+							<option value="MO"<c:if test="${event.state == 'MO'}"><c:out value=" selected"/></c:if>>MO</option>
+							<option value="MT"<c:if test="${event.state == 'MT'}"><c:out value=" selected"/></c:if>>MT</option>
+							<option value="NE"<c:if test="${event.state == 'NE'}"><c:out value=" selected"/></c:if>>NE</option>
+							<option value="NV"<c:if test="${event.state == 'NV'}"><c:out value=" selected"/></c:if>>NV</option>
+							<option value="NH"<c:if test="${event.state == 'NH'}"><c:out value=" selected"/></c:if>>NH</option>
+							<option value="NJ"<c:if test="${event.state == 'NJ'}"><c:out value=" selected"/></c:if>>NJ</option>
+							<option value="NM"<c:if test="${event.state == 'NM'}"><c:out value=" selected"/></c:if>>NM</option>
+							<option value="NY"<c:if test="${event.state == 'NY'}"><c:out value=" selected"/></c:if>>NY</option>
+							<option value="NC"<c:if test="${event.state == 'NC'}"><c:out value=" selected"/></c:if>>NC</option>
+							<option value="ND"<c:if test="${event.state == 'ND'}"><c:out value=" selected"/></c:if>>ND</option>
+							<option value="OH"<c:if test="${event.state == 'OH'}"><c:out value=" selected"/></c:if>>OH</option>
+							<option value="OK"<c:if test="${event.state == 'OK'}"><c:out value=" selected"/></c:if>>OK</option>
+							<option value="OR"<c:if test="${event.state == 'OR'}"><c:out value=" selected"/></c:if>>OR</option>
+							<option value="PA"<c:if test="${event.state == 'PA'}"><c:out value=" selected"/></c:if>>PA</option>
+							<option value="RI"<c:if test="${event.state == 'RI'}"><c:out value=" selected"/></c:if>>RI</option>
+							<option value="SC"<c:if test="${event.state == 'SC'}"><c:out value=" selected"/></c:if>>SC</option>
+							<option value="SD"<c:if test="${event.state == 'SD'}"><c:out value=" selected"/></c:if>>SD</option>
+							<option value="TN"<c:if test="${event.state == 'TN'}"><c:out value=" selected"/></c:if>>TN</option>
+							<option value="TX"<c:if test="${event.state == 'TX'}"><c:out value=" selected"/></c:if>>TX</option>
+							<option value="UT"<c:if test="${event.state == 'UT'}"><c:out value=" selected"/></c:if>>UT</option>
+							<option value="VT"<c:if test="${event.state == 'VT'}"><c:out value=" selected"/></c:if>>VT</option>
+							<option value="VA"<c:if test="${event.state == 'VA'}"><c:out value=" selected"/></c:if>>VA</option>
+							<option value="WA"<c:if test="${event.state == 'WA'}"><c:out value=" selected"/></c:if>>WA</option>
+							<option value="WV"<c:if test="${event.state == 'WV'}"><c:out value=" selected"/></c:if>>WV</option>
+							<option value="WI"<c:if test="${event.state == 'WI'}"><c:out value=" selected"/></c:if>>WI</option>
+							<option value="WY"<c:if test="${event.state == 'WY'}"><c:out value=" selected"/></c:if>>WY</option>
 						</select>
 						<input type="hidden" name="eventId" value="${event.id}">
 						<input class="btn btn-primary" type="submit" value="Edit">
