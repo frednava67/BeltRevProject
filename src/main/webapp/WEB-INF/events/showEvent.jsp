@@ -20,7 +20,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 
     <title>${event.name}</title>
 </head>
@@ -34,12 +34,12 @@
 		</div>
         <div class="row">		
         	<div class="col-xl-1 col-lg-1 col-med-1"></div>
-            <div class="col-xl-6 col-lg-6 col-med-6">
+            <div class="col-xl-4 col-lg-4 col-med-4">
             	<br>
 	            <label>Host: ${event.host.first_name} ${event.host.last_name}</label><br>
 	            <label>Date: ${event.eventDate}</label><br>
 				<label>Location: ${event.location}, ${event.state}</label><br>
-	            <label>People who are attending this event: ${event.users.size()}</label><br>
+	            <label>People who are attending this event: ${event.users.size()}</label><br><br>
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <th>Name</th>
@@ -54,14 +54,32 @@
                         </c:forEach>
                     </tbody>
                 </table>	            
-	            
-	            
-	            
-	            
-	            
             </div>
-            <div class="col-xl-6 col-lg-6 col-med-6">
+        	<div class="col-xl-1 col-lg-1 col-med-1"></div>
+            <div class="col-xl-4 col-lg-4 col-med-4">
+            	<br>
+                <h2>Message Wall</h2>
+                <br>
+                <div class="col-xl-12 col-lg-12 col-med-12 messagesdiv border border-dark">
+                    <c:forEach items="${messages}" var="message">
+                        </p>
+                            <c:out value="${message.messager.first_name} says ${message.content}"/>
+                            <hr>
+                        <p>
+                    </c:forEach>                    
+                </div>
+                <br>
+                <br>
+                <h5>Add Comment:</h5>
+                <form:form action="/messages/process" modelAttribute="message" method="POST">
+                    <form:input type="text" path="content" class="form-control newmessagetextbox"/>
+                    <form:errors path="content"></form:errors>
+                    <input type="hidden" name="eventid" value="${event.id}">
+                    <br>
+                    <input type="submit" value="Submit" class="float-right"/>
+                </form:form>
             </div>
+        	<div class="col-xl-1 col-lg-1 col-med-1"></div>
         </div>
     </div>
 </body>

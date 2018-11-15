@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.freddo.beltrevproject.models.Event;
+import com.freddo.beltrevproject.models.Message;
 import com.freddo.beltrevproject.models.User;
 import com.freddo.beltrevproject.services.EventService;
 import com.freddo.beltrevproject.services.UserService;
@@ -40,8 +41,7 @@ public class EventController {
         System.out.println("===============================================dashboard()");
         if (session.getAttribute("userid") == null) {
         	return "redirect:/";
-        }
-        
+        }        
         
         Long loggedInUserId = (Long) session.getAttribute("userid");
         User loggedInUser = userService.findUserById(loggedInUserId);
@@ -70,15 +70,18 @@ public class EventController {
     }
 
 	 @RequestMapping("/events/{eventid}")
-	 public String showEvent(@PathVariable("eventid") Long eventid, HttpSession session, Model model ) {
+	 public String showEvent(@PathVariable("eventid") Long eventid, @ModelAttribute("message") Message message, HttpSession session, Model model ) {
 		 System.out.println("===============================================showEvent()");
-		 Event event = eventService.findEvent(eventid);
+
 		 Long loggedInUserId = (Long) session.getAttribute("userid");
-		 		 
-		 if (!(loggedInUserId.equals((Long) event.getHost().getId()))) {
-			 return "redirect:/events";
+		 if (loggedInUserId.equals(null)) {
+			 return "redirect:/registration";
 		 }
+
+		 Event event = eventService.findEvent(eventid);
+		 List<Message> messages = event.getMessages();
 		 
+		 model.addAttribute("messages", messages);
 		 model.addAttribute("event", event);
 		 
 		 return "/events/showEvent.jsp";

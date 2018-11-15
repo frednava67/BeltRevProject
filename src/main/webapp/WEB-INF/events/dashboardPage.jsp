@@ -20,7 +20,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 
     <title>Events</title>
 </head>
@@ -49,7 +49,7 @@
                     <tbody>
                         <c:forEach items="${inStateEvents}" var="event">
                             <tr>
-                                <td>${event.name}</td>
+                                <td><a href='/events/${event.id}'>${event.name}</a></td>
                                 <td>${event.eventDate}</td>
                                 <td>${event.location}</td>
                                 <td>${event.host.first_name}</td>
@@ -85,7 +85,7 @@
                     <tbody>
                         <c:forEach items="${outOfStateEvents}" var="event">
                             <tr>
-                                <td>${event.name}</td>
+                                 <td><a href='/events/${event.id}'>${event.name}</a></td>
                                 <td>${event.eventDate}</td>
                                 <td>${event.location}</td>
                                 <td>${event.host.first_name}</td>

@@ -30,7 +30,11 @@ public class Message {
 
     @ManyToOne(fetch = FetchType.LAZY) 
     @JoinColumn(name="messager_id") 
-    private User messager; 
+    private User messager;
+    
+    @ManyToOne(fetch = FetchType.LAZY) 
+    @JoinColumn(name="event_id") 
+    private Event event;
      
     public Message() { 
          
@@ -87,5 +91,13 @@ public class Message {
 
 	public void setMessager(User messager) {
 		this.messager = messager;
+	}
+
+	public Event getEvent() {
+		return event;
+	}
+
+	public void setEvent(Event event) {
+		this.event = event;
 	} 
 }

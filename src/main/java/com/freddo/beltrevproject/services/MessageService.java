@@ -29,6 +29,11 @@ public class MessageService {
 	    return messageRepo.save(message); 
 	} 
 	
+	// updates a message 
+	public Message updateMessage(Message message) { 
+	    return messageRepo.save(message); 
+	} 
+	
 	// retrieves a message 
 	public Message findMessage(Long id) { 
 	    Optional<Message> optionalMessage = messageRepo.findById(id); 
