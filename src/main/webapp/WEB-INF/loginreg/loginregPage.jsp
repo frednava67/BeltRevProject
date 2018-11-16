@@ -36,17 +36,17 @@
                         <p>
                             <form:label path="first_name">First Name</form:label>
                             <form:input type="text" path="first_name" />
-                            <form:errors path="first_name" />
+                            <form:errors style="color: red;" path="first_name" />
                         </p>
                         <p>
                             <form:label path="last_name">Last Name</form:label>
                             <form:input type="text" path="last_name" />
-                            <form:errors path="last_name"/> 
+                            <form:errors style="color: red;" path="last_name"/> 
                         </p>
                         <p>
                             <form:label path="email">Email:</form:label>
                             <form:input type="email" path="email" />
-                            <form:errors path="email" />   
+                            <form:errors style="color: red;" path="email" />   
                         </p>
                         <p>
                             <form:label path="location">Location:</form:label>
@@ -104,13 +104,13 @@
                                 <form:option value="WI">WI</form:option>
                                 <form:option value="WY">WY</form:option>
                             </form:select>
-                            <form:errors path="location" />  
-                            <form:errors path="state" />  
+                            <form:errors style="color: red;" path="location" />  
+                            <form:errors style="color: red;" path="state" />  
                         </p>
                         <p>
                             <form:label path="password">Password:</form:label>
                             <form:password path="password" />
-                            <form:errors path="password" />     
+                            <form:errors style="color: red;" path="password" />     
                         </p>
                         <p>
                             <form:label path="passwordConfirmation">Password Confirmation:</form:label>
@@ -120,7 +120,6 @@
                     </form:form>
                 </fieldset>
             </div>
-
             <div class="col-xl-6">
                 <fieldset>
                     <legend>Login</legend>
@@ -140,10 +139,6 @@
                     </form>
                 </fieldset>
             </div>
-
-
-
-
         </div>
     </div>
 </body>

@@ -149,12 +149,12 @@
                     <p>
                         <form:label path="name">Name</form:label>
                         <form:input type="text" path="name" />
-                        <form:errors path="name" />
+                        <form:errors style="color: red;" path="name" />
                     </p>
                     <p>
                         <form:label path="eventDate">Date</form:label>
                         <form:input type="date" path="eventDate" />
-                        <form:errors path="eventDate" />
+                        <form:errors style="color: red;" path="eventDate" />
                     </p>
                     <p>
                         <form:label path="location">Location:</form:label>
@@ -212,8 +212,8 @@
                             <form:option value="WI">WI</form:option>
                             <form:option value="WY">WY</form:option>
                         </form:select>
-                        <form:errors path="location" />
-                        <form:errors path="state" />
+                        <form:errors style="color: red;" path="location" />
+                        <form:errors style="color: red;" path="state" />
                     </p>
                     <input type="hidden" name="hostid" value="${user.id}" />
                     <input type="submit" value="Create Event" />
